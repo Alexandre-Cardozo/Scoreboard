@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MySeconds extends StatelessWidget {
+class SecondsScroll extends StatelessWidget {
   final int secs;
 
-  const MySeconds({super.key, required this.secs});
+  const SecondsScroll({super.key, required this.secs});
 
   @override
   Widget build(BuildContext context) {

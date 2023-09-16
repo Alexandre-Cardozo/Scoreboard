@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MyMinutes extends StatelessWidget {
+class MinutesScroll extends StatelessWidget {
   final int mins;
 
-  const MyMinutes({super.key, required this.mins});
+  const MinutesScroll({super.key, required this.mins});
 
   @override
   Widget build(BuildContext context) {
