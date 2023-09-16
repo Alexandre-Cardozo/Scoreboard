@@ -1,5 +1,6 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:scoreboard/model/domain/Countdown.dart';
 
 class CircularCountdown extends StatefulWidget {
@@ -12,7 +13,6 @@ class CircularCountdown extends StatefulWidget {
 }
 
 class _CircularCountdownState extends State<CircularCountdown> {
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -71,16 +71,21 @@ class _CircularCountdownState extends State<CircularCountdown> {
             // This Callback will execute when the Countdown Starts.
             onStart: () {
               // Here, do whatever you want
-              debugPrint('Countdown Started');
+              //debugPrint('Countdown Started');
             },
             // This Callback will execute when the Countdown Ends.
             onComplete: () {
-              debugPrint('Countdown Ended');
+              Fluttertoast.showToast(msg: "Match Time Ended", timeInSecForIosWeb: 5);
+
+              Future.delayed(const Duration(seconds: 1), () {
+                widget.countdown.controllerCountdown.reset();
+              });
+              //debugPrint('Countdown Ended');
             },
             // This Callback will execute when the Countdown Changes.
             onChange: (String timeStamp) {
               // Here, do whatever you want
-              debugPrint('Countdown Changed $timeStamp');
+              //debugPrint('Countdown Changed $timeStamp');
             },
             /*
                         * Function to format the text.
